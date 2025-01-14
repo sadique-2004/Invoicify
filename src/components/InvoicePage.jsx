@@ -19,7 +19,8 @@ function InvoicePage() {
   
 
   return (
-    <div className="p-8 bg-gray-100 min-h-screen" id="invoice">
+    <div className=" w-full p-8 bg-[#EEEFEE]  min-h-screen" id="invoice">
+      {/* flex flex-col md:flex-row items-center justify-center h-screen w-full px-4 md:px-16 lg:px-40 py-2 */}
       <div className="bg-white p-6 shadow-md rounded-lg">
         <h1 className="text-2xl font-bold mb-6">Invoice</h1>
         <div className="mb-4">
