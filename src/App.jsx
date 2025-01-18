@@ -4,8 +4,10 @@ import LoginPage from './components/LoginPage';
 import InvoicePage from './components/InvoicePage';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import AboutUs from './components/AboutUs';
+// import AboutUs from './components/AboutUs';
 import TryLogin from './components/TryLogin';
+
+
 
 function App() {
   return (
@@ -15,7 +17,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<TryLogin />} />
         <Route path="/invoice" element={<InvoicePage />} />
-        <Route path="/AboutUs" element={<AboutUs/>} />
+        {/* <Route path="/AboutUs" element={<AboutUs/>} /> */}
         <Route path='/try' element={<LoginPage/>} />
       </Routes>
       <Footer/>

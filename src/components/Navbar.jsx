@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaHome } from "react-icons/fa"; // Import Home icon from react-icons
 import { motion, useSpring, useScroll } from "motion/react";
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.jpg';
 
 
 
@@ -39,7 +39,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto  flex justify-between items-center py-4 px-4">
 
                 <span className='flex items-center'>
-                    {/* <img src={logo} alt='Logo' className='w-15 h-8' /> */}
+                    <img src={logo} alt='Logo' className='w-15 h-8 rounded-full' />
                     <h1 className="text-2xl font-bold text-[#45ccb8] ">
                         Invoicify
                     </h1>

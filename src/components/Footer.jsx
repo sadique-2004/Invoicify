@@ -22,7 +22,7 @@ const Footer = () => {
 
             <div className="mt-6 text-gray-300 text-center text-sm">
             <p>&copy; {new Date().getFullYear()} Invoicify | All rights reserved.</p>
-            <p className="text-xs">Designed with ❤️ by SADIQUE</p>
+            <p className="text-xs">Designed & Develop with ❤️ by SADIQUE</p>
           </div>
 
 

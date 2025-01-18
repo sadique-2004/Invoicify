@@ -19,8 +19,8 @@ function InvoicePage() {
   
 
   return (
-    <div className=" w-full p-8 bg-[#EEEFEE]  min-h-screen" id="invoice">
-      {/* flex flex-col md:flex-row items-center justify-center h-screen w-full px-4 md:px-16 lg:px-40 py-2 */}
+    <div className=" w-full p-8 bg-[#EEEFEE]  min-h-screen " id="invoice">
+
       <div className="bg-white p-6 shadow-md rounded-lg">
         <h1 className="text-2xl font-bold mb-6">Invoice</h1>
         <div className="mb-4">
@@ -75,7 +75,7 @@ function InvoicePage() {
                   updatedItems[index].name = e.target.value;
                   setItems(updatedItems);
                 }}
-                className="flex-1 px-4 py-2 border rounded"
+                className="flex-1 px-4 py-2 border rounded w-full "
               />
               <input
                 type="number"
@@ -86,7 +86,7 @@ function InvoicePage() {
                   updatedItems[index].quantity = +e.target.value;
                   setItems(updatedItems);
                 }}
-                className="w-24 px-4 py-2 border rounded"
+                className="w-full sm:w-24 px-4 py-2 border rounded"
               />
               <input
                 type="number"
@@ -97,11 +97,11 @@ function InvoicePage() {
                   updatedItems[index].price = +e.target.value;
                   setItems(updatedItems);
                 }}
-                className="w-32 px-4 py-2 border rounded"
+                className="w-full sm:w-32 px-4 py-2 border rounded"
               />
               <button
                 onClick={() => removeItem(index)}
-                className="text-red-500 hover:underline"
+                className="  w-full sm:w-auto text-red-500 hover:underline"
               >
                 Remove
               </button>

@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 import createInvoice from '../assets/createInvoice.jpg';
 import manageRecords from '../assets/manageRecords.jpg';
 import printDownload from '../assets/printDownload.jpg'
-import invoiceImage from '../assets/logo.png';
+// import invoiceImage from '../assets/logo.png';
+
+// import MakeItRain from './components/MakeItRain';
+import Confetti from 'react-confetti'
 import FAQ from './Faq';
 
 const HomePage = () => {
@@ -37,14 +40,24 @@ const HomePage = () => {
             Join 10+ businesses using our invoicing tool!
           </p>
           
+          {/* <Confetti/> */}
+
           <Link to="/login">
             <button className="mt-6 px-6 py-2 bg-white text-[#45ccb8] font-semibold rounded-lg shadow-md hover:bg-blue-100"
             onClick={Indevelopment}>
               Get Started
             </button>
           </Link>
+
+          <button className="ml-4 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+  Make It Rain 🎉
+</button>
         </div>
       </div>
+ 
+
+
+
 
        {/* Quote Section
        <div className="bg-gray-200 py-8">
