@@ -39,8 +39,8 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto  flex justify-between items-center py-4 px-4">
 
                 <span className='flex items-center'>
-                    <img src={logo} alt='Logo' className='w-15 h-8 rounded-full' />
-                    <h1 className="text-2xl font-bold text-[#45ccb8] ">
+                    <img src={logo} alt='Logo' className='w-15 h-8 rounded-md' />
+                    <h1 className="text-3xl font-bold text-[#45ccb8] font-montserrat">
                         Invoicify
                     </h1>
                 </span>

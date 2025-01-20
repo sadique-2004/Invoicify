@@ -4,6 +4,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import logo from '../assets/footerLogo.png'
 
 const Footer = () => {
   return (
@@ -13,17 +14,20 @@ const Footer = () => {
           {/* Flex container for two parts */}
           <div className="flex flex-col md:flex-row items-center justify-between">
             {/* Left Section: Branding and Navigation */}
-            <div className="text-center md:text-left">
+            <div className="flex items-center">
               {/* Branding */}
-              <h1 className="text-2xl font-bold mb-2">Invoicify</h1>
-              <p className="text-gray-300 text-sm">Simplify your invoicing</p>
+              <img src={logo} alt='Logo' className='w-15 h-24 rounded-md hidden sm:block' />
+              <div className='text-center md:text-left'>
+                <h1 className="text-2xl font-bold mb-1 font-montserrat">Invoicify</h1>
+                <p className="text-gray-300 text-sm font-merriweather">Simplify your invoicing</p>
+              </div>
 
             </div>
 
             <div className="mt-6 text-gray-300 text-center text-sm">
-            <p>&copy; {new Date().getFullYear()} Invoicify | All rights reserved.</p>
-            <p className="text-xs">Designed & Develop with ❤️ by SADIQUE</p>
-          </div>
+              <p>&copy; {new Date().getFullYear()} Invoicify | All rights reserved.</p>
+              <p className="text-xs">Designed & Develop with ❤️ by SADIQUE</p>
+            </div>
 
 
             {/* Right Section: Social Media Icons */}

@@ -34,8 +34,8 @@ const FAQ = () => {
   return (
     <section className="bg-gradient-to-r from-gray-100 to-gray-200 py-12">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-gray-800 text-center mb-10">
-          Frequently Asked Questions
+        <h2 className="text-4xl font-bold text-[#45ccb8] text-center mb-10" style={{ fontFamily: "Open Sans"}}>
+        For Invoicifier’s FAQs
         </h2>
         <div className="space-y-6">
           {faqs.map((faq, index) => (
@@ -48,7 +48,7 @@ const FAQ = () => {
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}
-                <span className="text-gray-600 text-xl">
+                <span className="text-[#45ccb8] text-xl" style={{ fontFamily: ", serif" }}>
                   {activeIndex === index ? "-" : "+"}
                 </span>
               </button>
