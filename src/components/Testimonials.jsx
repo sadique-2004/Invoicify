@@ -3,13 +3,7 @@ import { motion } from "framer-motion";
 import sadiqueImg from "../assets/sad.jpg"
 
 const testimonials = [
-//   {
-//     name: "Emily R.",
-//     role: "Freelancer",
-//     feedback: "Invoicify saved me hours of manual work. The interface is clean, and I love the automation features.",
-//     rating: 5,
-//     image: "https://randomuser.me/api/portraits/women/47.jpg",
-//   },
+
   {
     name: "Md Sadique",
     role: "Freelancer",

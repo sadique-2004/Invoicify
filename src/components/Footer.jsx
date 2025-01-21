@@ -1,6 +1,5 @@
 
 
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
@@ -16,17 +15,17 @@ const Footer = () => {
             {/* Left Section: Branding and Navigation */}
             <div className="flex items-center">
               {/* Branding */}
-              <img src={logo} alt='Logo' className='w-15 h-24 rounded-md hidden sm:block' />
+              <img src={logo} alt='Logo' className='w-10 mr-2 h-14 rounded-md hidden sm:block' />
               <div className='text-center md:text-left'>
-                <h1 className="text-2xl font-bold mb-1 font-montserrat">Invoicify</h1>
-                <p className="text-gray-300 text-sm font-merriweather">Simplify your invoicing</p>
+                <h1 className="text-2xl font-bold mb-1 font-montserrat text-[#45ccb8]">Invoicify</h1>
+                <p className="text-white text-sm font-merriweather">Simplify your invoicing</p>
               </div>
 
             </div>
 
             <div className="mt-6 text-gray-300 text-center text-sm">
               <p>&copy; {new Date().getFullYear()} Invoicify | All rights reserved.</p>
-              <p className="text-xs">Designed & Develop with ❤️ by SADIQUE</p>
+              <p className="text-xs">Designed & Develop with ❤️ by <a className='underline hover:bg-[#45ccb8]' href="https://linktr.ee/Md_Sadique2004">SADIQUE</a></p>
             </div>
 
 
@@ -58,12 +57,6 @@ const Footer = () => {
               </a>
             </div>
           </div>
-
-          {/* Bottom Section: Credits */}
-          {/* <div className="mt-6 text-gray-300 text-center text-sm">
-            <p>&copy; {new Date().getFullYear()} Invoicify. All rights reserved.</p>
-            <p className="text-xs">Designed with ❤️ by [Your Name/Company]</p>
-          </div> */}
         </div>
       </footer>
     </div>

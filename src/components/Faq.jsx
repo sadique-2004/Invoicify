@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import faqImage from "../assets/faq.svg";
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -7,23 +8,22 @@ const FAQ = () => {
     {
       question: "What is Invoicify?",
       answer:
-        "Invoicify is a platform designed to simplify the creation, management, and storage of professional invoices. It's ideal for both individuals and businesses to streamline their invoicing processes.",
+        "Invoicify simplifies the creation and management of professional invoices, helping you save time and stay organized.",
     },
     {
-      question: "Do I need to create an account to use Invoicify?",
+      question: "Do I need to create an account?",
       answer:
-        "Currently, you only need to log in with the provided credentials to access the platform. A sign-up feature is planned for future updates.",
+        "For now, you can log in with provided credentials. A sign-up feature will arrive soon for personalized accounts.",
     },
     {
       question: "How do I create a new invoice?",
       answer:
-        "Navigate to the 'Create Invoice' section after logging in. Fill in customer details, add items dynamically, and save or print the generated invoice effortlessly.",
+        "Head to the 'Create Invoice' section, fill in customer details, and add items. The invoice can be saved or printed instantly.",
     },
-    
     {
-      question: "Can I customize my invoice templates?",
+      question: "Can I customize invoice templates?",
       answer:
-        "At the moment, Invoicify offers a standard invoice template. However, future versions will include customization options to match your business needs.",
+        "Not yet, but we're working on customization options that will align with your business needs!",
     },
   ];
 
@@ -32,33 +32,54 @@ const FAQ = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-gray-100 to-gray-200 py-12">
+    <section className="py-12 bg-gradient-to-r from-gray-100 to-gray-200">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-[#45ccb8] text-center mb-10" style={{ fontFamily: "Open Sans"}}>
-        For Invoicifier’s FAQs
+        {/* Heading */}
+        <h2 className="text-4xl font-bold text-[#45ccb8] text-center mb-10">
+          Need Help? Frequently Asked Questions
         </h2>
-        <div className="space-y-6">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-lg overflow-hidden transition-all"
-            >
-              <button
-                className="flex justify-between items-center w-full text-left px-6 py-4 text-lg font-semibold text-gray-800 hover:bg-gray-100"
-                onClick={() => toggleFAQ(index)}
-              >
-                {faq.question}
-                <span className="text-[#45ccb8] text-xl" style={{ fontFamily: ", serif" }}>
-                  {activeIndex === index ? "-" : "+"}
-                </span>
-              </button>
-              {activeIndex === index && (
-                <div className="px-6 pb-4 text-gray-600 text-base">
-                  {faq.answer}
+
+        {/* Content */}
+        <div className="flex flex-col lg:flex-row lg:space-x-8">
+          {/* FAQ List */}
+          <div className="flex-1">
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-white to-gray-50 rounded-lg shadow-md transition-all hover:shadow-lg overflow-hidden"
+                >
+                  <button
+                    className="flex justify-between items-center w-full px-6 py-4 text-lg font-semibold text-gray-700 hover:text-[#45ccb8]"
+                    onClick={() => toggleFAQ(index)}
+                  >
+                    {faq.question}
+                    <span>
+                      {activeIndex === index ? (
+                        <i className="fa-solid fa-chevron-up text-[#45ccb8]"></i>
+                      ) : (
+                        <i className="fa-solid fa-chevron-down text-gray-400"></i>
+                      )}
+                    </span>
+                  </button>
+                  {activeIndex === index && (
+                    <div className="px-6 pb-4 text-gray-600 text-base transition-all duration-300 ease-in-out">
+                      {faq.answer}
+                    </div>
+                  )}
                 </div>
-              )}
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* SVG Image (only for desktop view) */}
+          <div className="flex-1 hidden lg:block">
+            <img
+              src={faqImage}
+              alt="FAQs Illustration"
+              className="w-full max-w-md mx-auto"
+            />
+          </div>
         </div>
       </div>
     </section>
