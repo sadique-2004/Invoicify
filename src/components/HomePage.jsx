@@ -37,7 +37,7 @@ const HomePage = () => {
     <div className="bg-[#EEEFEE]">
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-[#45ccb8] to-[#34a99c] text-white py-16 px-4">
+      <div className="sm:bg-gradient-to-l bg-gradient-to-t from-gray-200 to-[#44ccb8] text-white py-16 px-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
           {/* Text Content */}
           <div className="text-center md:text-left md:w-1/2">
@@ -97,7 +97,7 @@ const HomePage = () => {
 
 
       {/* Quote Section */}
-      <div className="bg-gray-100 py-8 ">
+      <div className="bg-gray-100 py-8 border border-b-[#45ccb8]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="italic text-2xl font-bold text-gray-800">
             "Efficiency is doing things right; effectiveness is doing the right things."

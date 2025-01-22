@@ -35,7 +35,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/mdsadique5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-green-500 transition duration-300 text-xl"
+                className="hover:text-[#45ccb8] transition duration-300 text-xl"
               >
                 <FaFacebook />
               </a>
@@ -43,7 +43,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/mdsadique5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-green-500 transition duration-300 text-xl"
+                className="hover:text-[#45CCb8] transition duration-300 text-xl"
               >
                 <FaTwitter />
               </a>
@@ -51,7 +51,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/mdsadique5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-green-500 transition duration-300 text-xl"
+                className="hover:text-[#45CCB8] transition duration-300 text-xl"
               >
                 <FaLinkedin />
               </a>

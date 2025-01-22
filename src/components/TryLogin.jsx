@@ -72,7 +72,7 @@ export default function AuthForm() {
 
     return (
         <div className="bg-[#EEEFEE] min-h-screen flex flex-col items-center justify-center pb-4">
-            {/* <Confetti /> */}
+            <Confetti />
             {/* #E13A90 text-[#3B81B8]*/}
             <h1 className="text-2xl font-bold text-[#45ccb8] font-montserrat  text-center mt-4">
                 <span ref={typedElement} className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-[#DD8788] "></span>
