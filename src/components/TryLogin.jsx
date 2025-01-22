@@ -12,6 +12,16 @@ export default function AuthForm() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
+    const [showConfetti, setShowConfetti] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          setShowConfetti(false);
+        }, 3000); // Run for 3 seconds
+    
+        return () => clearTimeout(timer); // Clean up the timer
+      }, []);
+    
 
 
     const navigate = useNavigate();
@@ -42,15 +52,11 @@ export default function AuthForm() {
         // Initialized Typed.js
         const options = {
             strings: ["Welcome to Invoicify! 🎉",
-                "Simplify billing today! 🧾✨",
-                "Smart invoicing starts here! 💡📜",
-                "Let’s create invoices! 🤝🧾",
+                "Welcome to Invoicify! 🎉",
+                "Simplify billing today! 🧾",
                 "Effortless billing awaits! 🚀",
-                "Your invoice journey starts now! 🌟📋",
-                "Welcome! Let’s make invoicing fun! 😌📃",
-                "Streamline invoices with ease! 🔑📄",
-                "Invoicing made simple! 🖊️✨",
-                "Join the smart invoicers! 🌍💼"], // Texts to type
+                "Your invoice journey starts now!",
+                "Invoicing made simple! 🖊️✨",], // Texts to type
             typeSpeed: 90, // Typing speed
             backSpeed: 50, // Backspacing speed
             loop: true, // Loop the typing animation
@@ -72,7 +78,8 @@ export default function AuthForm() {
 
     return (
         <div className="bg-[#EEEFEE] min-h-screen flex flex-col items-center justify-center pb-4">
-            <Confetti />
+            {/* <Confetti /> */}
+            {showConfetti && <Confetti />}
             {/* #E13A90 text-[#3B81B8]*/}
             <h1 className="text-2xl font-bold text-[#45ccb8] font-montserrat  text-center mt-4">
                 <span ref={typedElement} className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-[#DD8788] "></span>
