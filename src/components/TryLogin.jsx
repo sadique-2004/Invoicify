@@ -55,8 +55,7 @@ export default function AuthForm() {
                 "Welcome to Invoicify! 🎉",
                 "Simplify billing today! 🧾",
                 "Effortless billing awaits! 🚀",
-                "Your invoice journey starts now!",
-                "Invoicing made simple! 🖊️✨",], // Texts to type
+                "Invoicing made simple!✨",], // Texts to type
             typeSpeed: 90, // Typing speed
             backSpeed: 50, // Backspacing speed
             loop: true, // Loop the typing animation

@@ -9,6 +9,8 @@ import FAQ from './Faq';
 import chatboat from '../assets/ai.jpg'
 import heroSvg from '../assets/hero.svg';
 import ScrollLogoText from './ScrollLogoText';
+import Card from '../components/card';
+
 
 
 const HomePage = () => {
@@ -160,11 +162,12 @@ const HomePage = () => {
         </div>
       </div>
 
-      <h2 className="bg-white text-4xl font-bold text-[#45ccb8] text-center py-2 ">
+      <h2 className="bg-white sm:text-4xl text-3xl font-bold text-[#45ccb8] text-center sm:py-2 py-4 ">
         See How Invoicify Has Helped Others
       </h2>
-      <Testimonials />
+      {/* <Testimonials /> */}
 
+      <Card />
 
       <FAQ />
 

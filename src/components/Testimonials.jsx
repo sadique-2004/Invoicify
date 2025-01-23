@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import sadiqueImg from "../assets/sad.jpg"
+import sadiqueImg from "../assets/sad.jpg";
+
 
 const testimonials = [
 
@@ -9,7 +10,7 @@ const testimonials = [
     role: "Freelancer",
     feedback: "Invoicify saved me hours of manual work. The interface is clean, and I love the automation features.",
     rating: 5,
-    image: sadiqueImg ,
+    image: sadiqueImg,
   },
   ,
   {
@@ -19,7 +20,7 @@ const testimonials = [
     rating: 5,
     image: "https://randomuser.me/api/portraits/women/60.jpg",
   },
-  
+
   {
     name: "Mark T.",
     role: "Small Business Owner",
@@ -30,7 +31,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ name, role, feedback, rating, image }) => (
-    
+
   <motion.div
     className="testimonial-card"
     whileHover={{ scale: 1.05 }}
@@ -59,18 +60,19 @@ const TestimonialCard = ({ name, role, feedback, rating, image }) => (
       <img
         src={image}
         alt={`${name}'s picture`}
-        style={{ width: "100%", height: "100%", objectFit: "cover",}}
+        style={{ width: "100%", height: "100%", objectFit: "cover", }}
       />
     </div>
     {/* User Details */}
-    <h3 style={{ marginBottom: "0.5rem", fontFamily:"Montserrat" }}>{name}</h3>
-    <p style={{ color: "#888", fontStyle: "italic", fontFamily:"Lato" }}>{role}</p>
-    <p style={{ margin: "1rem 0", color: "#555", fontFamily:"Merriweather" }}>{feedback}</p>
-    <div>
-      {"⭐".repeat(Math.floor(rating))}{" "}
-      {rating % 1 === 0.5 ? "⭐ (half)" : ""}
-    </div>
-  </motion.div>
+      <h3 style={{ marginBottom: "0.5rem", fontFamily: "Montserrat" }}>{name}</h3>
+      <p style={{ color: "#888", fontStyle: "italic", fontFamily: "Lato" }}>{role}</p>
+      <p style={{ margin: "1rem 0", color: "#555", fontFamily: "Merriweather" }}>{feedback}</p>
+      <div>
+        {"⭐".repeat(Math.floor(rating))}{" "}
+        {rating % 1 === 0.5 ? "⭐ (half)" : ""}
+  
+  </div>
+  </motion.div >
 );
 
 const Testimonials = () => (
@@ -90,3 +92,11 @@ const Testimonials = () => (
 );
 
 export default Testimonials;
+
+
+
+// <SwiperSlide>Slide 1</SwiperSlide>
+// <SwiperSlide>Slide 2</SwiperSlide>
+// <SwiperSlide>Slide 3</SwiperSlide>
+// <SwiperSlide>Slide 4</SwiperSlide>
+// <SwiperSlide>Slide 5</SwiperSlide>
