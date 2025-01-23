@@ -80,11 +80,11 @@ export default function AuthForm() {
             {/* <Confetti /> */}
             {showConfetti && <Confetti />}
             {/* #E13A90 text-[#3B81B8]*/}
-            <h1 className="text-2xl font-bold text-[#45ccb8] font-montserrat  text-center mt-4">
+            <h1 className="sm:text-2xl text-xl px-4 font-bold text-[#45ccb8] font-montserrat  text-center mt-4">
                 <span ref={typedElement} className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-[#DD8788] "></span>
             </h1>
-            <h1 className="text-3xl font-bold text-[#45ccb8]   text-center mb-2 font-montserrat">
-                Please👤Login/Sign-Up to explore cool features.</h1>
+            <h1 className="sm:text-3xl text-xl px-4 font-bold text-[#45ccb8]   text-center mb-2 font-montserrat">
+                Please Login/SignUp to explore cool features.</h1>
 
             <div className="flex flex-col md:flex-row items-center justify-center h-screen w-full px-4 md:px-16 lg:px-40 py-2">
 

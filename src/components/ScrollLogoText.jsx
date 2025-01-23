@@ -10,25 +10,25 @@ const ScrollLogoText = () => {
         <div className="flex items-center ml-5">
           <img src={logo} alt="Invoicify Logo" className="h-12 mr-3" />
           <p className="text-white text-xl font-sans">
-            <span className="text-[#21E1CE] font-bold">Invoicify</span> - Simplify billing today! 🧾 | Developed By-Sadique
+            <span className="text-[#21E1CE] font-bold">Invoicify</span> - Simplify billing today! 🧾
           </p>
         </div>
         <div className="flex items-center ml-5">
           <img src={logo} alt="Invoicify Logo" className="h-12 mr-3" />
           <p className="text-white text-xl font-sans">
-            <span className="text-[#21E1CE] font-bold">Invoicify</span> - Simplify billing today! 🧾 | Developed By-Sadique
+          <span className="text-[#21E1CE] font-bold">Invoicify</span> - Simplifying billing, saving time! 🧾
           </p>
         </div>
         <div className="flex items-center ml-5">
           <img src={logo} alt="Invoicify Logo" className="h-12 mr-3" />
           <p className="text-white text-xl font-sans">
-            <span className="text-[#21E1CE] font-bold">Invoicify</span> - Simplify billing today! 🧾 | Developed By-Sadique
+            <span className="text-[#21E1CE] font-bold">Invoicify</span> - Simplify billing today! 🧾
           </p>
         </div>
         <div className="flex items-center ml-5">
           <img src={logo} alt="Invoicify Logo" className="h-12 mr-3" />
           <p className="text-white text-xl font-sans">
-            <span className="text-[#21E1CE] font-bold">Invoicify</span> - Simplify billing today! 🧾 | Developed By-Sadique
+            <span className="text-[#21E1CE] font-bold">Invoicify</span> - Simplify billing today! 🧾
         
           </p>
         </div>

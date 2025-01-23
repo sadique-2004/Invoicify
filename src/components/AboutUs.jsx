@@ -35,7 +35,7 @@ const AboutUs = () => {
         <h2 className="text-3xl font-bold text-[#45ccb8] text-center font-montserrat">About US</h2>
 
         <p className="text-xl text-center font-merriweather">
-          At <strong className="text-[#45ccb8] ">Invoicify</strong>, we aim to revolutionize how businesses and freelancers manage invoices.
+          At <strong className="text-[#45ccb8] font-montserrat ">Invoicify</strong>, we aim to revolutionize how businesses and freelancers manage invoices.
           Simplifying the process helps you save time, reduce financial stress, and focus on growing your business.
         </p>
 
@@ -57,7 +57,7 @@ const AboutUs = () => {
         </div> */}
 
         {/* Why Choose Us Section */}
-        <div className="bg-[#45ccb8] text-white text-center py-10 rounded-lg shadow-xl">
+        <div className="bg-[#45ccb8] text-white text-center py-10 px-5 rounded-lg shadow-xl">
           <h3 className="text-2xl font-semibold mb-4 font-montserrat ">🌟 Why Choose Invoicify ?</h3>
           <p className="text-lg font-merriweather">
             Our platform is intuitive, easy to use, and designed to reduce financial burden, ensuring that invoicing is effortless.
