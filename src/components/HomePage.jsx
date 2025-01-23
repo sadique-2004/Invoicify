@@ -165,9 +165,9 @@ const HomePage = () => {
       <h2 className="bg-white sm:text-4xl text-3xl font-bold text-[#45ccb8] text-center sm:py-2 py-4 ">
         See How Invoicify Has Helped Others
       </h2>
-      {/* <Testimonials /> */}
+      <Testimonials />
 
-      <Card />
+      {/* <Card /> */}
 
       <FAQ />
 
