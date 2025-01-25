@@ -81,7 +81,7 @@ export default function AuthForm() {
             {showConfetti && <Confetti />}
             {/* #E13A90 text-[#3B81B8]*/}
             <h1 className="sm:text-2xl text-xl px-4 font-bold text-[#45ccb8] font-montserrat  text-center mt-4">
-                <span ref={typedElement} className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-[#DD8788] "></span>
+                <span ref={typedElement} className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-[#44ccb8] "></span>
             </h1>
             <h1 className="sm:text-3xl text-xl px-4 font-bold text-[#45ccb8]   text-center mb-2 font-montserrat">
                 Please Login/SignUp to explore cool features.</h1>
@@ -96,7 +96,7 @@ export default function AuthForm() {
 
                 {/* Form Section */}
                 <div className="flex-1 bg-white p-6 md:p-8 rounded md:shadow-lg w-full md:w-[30%] max-w-sm">
-                    <h1 className="text-2xl font-bold mb-6 text-center text-[#DD8788]">
+                    <h1 className="text-2xl font-bold mb-6 text-center text-gray-500">
                         {isLogin ? "Login" : "Sign Up"}
                     </h1>
 

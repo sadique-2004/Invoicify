@@ -20,7 +20,7 @@ const HomePage = () => {
   }
 
   const Indevelopment = () => {
-    alert(`
+    confirm(`
       Welcome to Invoicify!
       
       This is a trial version of our platform. To log in, please use the following credentials:

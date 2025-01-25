@@ -29,7 +29,7 @@ const Navbar = () => {
     }
 
     return (
-        < nav className="bg-white shadow sticky top-0" >
+        < nav className="bg-white shadow sticky top-0 z-50" >
             <motion.div
                 className="h-[6.5px] bg-[#45ccb8] origin-[0%] fixed top-0 left-0 right-0 z-50"
                 style={{ scaleX: scrollYProgress }}

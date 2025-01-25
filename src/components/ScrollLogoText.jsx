@@ -1,7 +1,7 @@
 // ScrollLogoText.js
 import React from "react";
 import Marquee from "react-fast-marquee";
-import logo from "../assets/footerLogo.png"; // Replace with your logo path
+import logo from "../assets/footerLogo.png"; 
 
 const ScrollLogoText = () => {
   return (

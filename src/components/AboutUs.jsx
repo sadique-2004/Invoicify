@@ -58,7 +58,7 @@ const AboutUs = () => {
 
         {/* Why Choose Us Section */}
         <div className="bg-[#45ccb8] text-white text-center py-10 px-5 rounded-lg shadow-xl">
-          <h3 className="text-2xl font-semibold mb-4 font-montserrat ">🌟 Why Choose Invoicify ?</h3>
+          <h3 className="text-2xl font-semibold mb-4 font-montserrat ">Why Choose Invoicify ?</h3>
           <p className="text-lg font-merriweather">
             Our platform is intuitive, easy to use, and designed to reduce financial burden, ensuring that invoicing is effortless.
             Join thousands of businesses and freelancers who trust us for their invoicing needs.
