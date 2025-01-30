@@ -9,7 +9,10 @@ import FAQ from './Faq';
 import chatboat from '../assets/ai.jpg'
 import heroSvg from '../assets/hero.svg';
 import ScrollLogoText from './ScrollLogoText';
-import Card from '../components/card';
+// import Card from '../components/card';
+import './Global.css';
+import ShiftingCountdown from './ShiftingCountdown';
+
 
 
 
@@ -36,10 +39,10 @@ const HomePage = () => {
   }
 
   return (
-    <div className="bg-[#EEEFEE]">
+    <div>
 
       {/* Hero Section */}
-      <div className="sm:bg-gradient-to-l bg-gradient-to-t from-gray-200 to-[#44ccb8] text-white py-16 px-4">
+      <div className="sm:bg-gradient-to-l bg-gradient-to-t from-gray-200 to-[#44ccb8] text-white py-16 px-4 selection:text-[#45ccb8] selection:bg-gray-100">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
           {/* Text Content */}
           <div className="text-center md:text-left md:w-1/2">
@@ -74,7 +77,7 @@ const HomePage = () => {
 
               {/* About Us Button */}
               <button
-                className="flex items-center gap-2 px-6 py-3 border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#45ccb8] transition duration-200"
+                className="flex items-center gap-2 px-6 py-3 border border-white hover:border-[#] text-white font-semibold rounded-lg hover:bg-green-100 hover:text-[#45ccb8] transition duration-200"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
                 onClick={aboutUs}
               >
@@ -92,16 +95,19 @@ const HomePage = () => {
             />
           </div>
         </div>
+       
       </div>
+
+      
 
 
       <ScrollLogoText />
 
 
       {/* Quote Section */}
-      <div className="bg-gray-100 py-8 border border-b-[#45ccb8]">
+      <div className="bg-gray-100 py-8 border border-b-[#45ccb8] selection:bg-[#45ccb8] selection:text-gray-100">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="italic text-2xl font-bold text-gray-800">
+          <h2 className="italic text-2xl font-bold text-gray-800 ">
             "Efficiency is doing things right; effectiveness is doing the right things."
           </h2>
           <p className="mt-4 text-gray-600">- Peter Drucker</p>
@@ -110,7 +116,7 @@ const HomePage = () => {
 
 
       {/* Content Section */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-16 bg-gray-100 selection:bg-[#45ccb8] selection:text-gray-100">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6">
           {/* Card 1 */}
           <div className="bg-white shadow-lg hover:shadow-xl rounded-lg p-8 transition-shadow">
@@ -162,10 +168,11 @@ const HomePage = () => {
         </div>
       </div>
 
-      <h2 className="bg-white sm:text-4xl text-3xl font-bold text-[#45ccb8] text-center sm:py-2 py-4 ">
-        See How Invoicify Has Helped Others
-      </h2>
+      <ShiftingCountdown/>
+
+      
       <Testimonials />
+      
 
       {/* <Card /> */}
 

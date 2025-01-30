@@ -3,12 +3,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { RiLinkedinFill } from "react-icons/ri";
 import logo from '../assets/footerLogo.png'
 
 const Footer = () => {
   return (
-    <div className="bg-gray-100">
-      <footer className="bg-[#445C64] text-white py-6">
+    <div className=" selection:bg-[#45ccb8] selection:text-gray-100">
+      <footer className="bg-gray-800 text-white py-6">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           {/* Flex container for two parts */}
           <div className="flex flex-col md:flex-row items-center justify-between">
@@ -30,12 +31,14 @@ const Footer = () => {
 
 
             {/* Right Section: Social Media Icons */}
+            
             <div className="mt-6 md:mt-0 flex justify-center space-x-6">
+              
               <a
                 href="https://www.linkedin.com/in/mdsadique5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#45ccb8] transition duration-300 text-xl"
+                className="hover:text-[#45ccb8] transition duration-300 text-xl border border-1px solid rounded-full p-1"
               >
                 <FaFacebook />
               </a>
@@ -43,7 +46,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/mdsadique5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#45CCb8] transition duration-300 text-xl"
+                className="hover:text-[#45CCb8] transition duration-300 text-xl border border-1px solid rounded-full p-1"
               >
                 <FaTwitter />
               </a>
@@ -51,9 +54,11 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/mdsadique5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#45CCB8] transition duration-300 text-xl"
+                className="hover:text-[#45CCB8] transition duration-300 text-xl border border-1px solid rounded-full p-1"
               >
-                <FaLinkedin />
+                {/* <FaLinkedin /> */}
+                <RiLinkedinFill />
+
               </a>
             </div>
           </div>

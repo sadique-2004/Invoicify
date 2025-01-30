@@ -32,10 +32,10 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-12 bg-gradient-to-r from-gray-100 to-gray-200">
+    <section className="py-12 bg-gradient-to-r from-gray-100 to-gray-200 selection:text-[#45ccb8]">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
-        <h2 className="sm:text-4xl text-3xl font-bold text-[#45ccb8] text-center mb-10">
+        <h2 className="sm:text-4xl text-3xl font-bold text-[#45ccb8] text-center mb-10 selection:text-white selection:bg-[#45ccb8]">
           Need Help? Frequently Asked Questions
         </h2>
 

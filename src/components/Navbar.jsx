@@ -29,7 +29,7 @@ const Navbar = () => {
     }
 
     return (
-        < nav className="bg-white shadow sticky top-0 z-50" >
+        < nav className="bg-white shadow sticky top-0 z-50  selection:text-white selection:bg-[#45ccb8]" >
             <motion.div
                 className="h-[6.5px] bg-[#45ccb8] origin-[0%] fixed top-0 left-0 right-0 z-50"
                 style={{ scaleX: scrollYProgress }}
@@ -38,12 +38,14 @@ const Navbar = () => {
 
             <div className="max-w-7xl mx-auto  flex justify-between items-center py-4 px-4">
 
-                <span className='flex items-center'>
+               <Link to="/">
+               <span className='flex items-center'>
                     <img src={logo} alt='Logo' className='w-15 h-8 rounded-md' />
                     <h1 className="text-3xl font-bold text-[#45ccb8] font-montserrat">
                         Invoicify
                     </h1>
                 </span>
+               </Link>
 
                 <div className="space-x-4 flex">
                     <Link
