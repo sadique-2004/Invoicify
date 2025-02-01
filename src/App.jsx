@@ -9,7 +9,7 @@ import Templates from './components/Templates';
 import InvoiceForm from './components/InvoiceForm';
 import Card from './components/card';
 import NotFound from './components/NotFound';
-import SquishyCard from './Subscription';
+import SquishyCard from './components/Subscription';
 
 
 

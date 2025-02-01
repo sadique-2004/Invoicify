@@ -1,4 +1,3 @@
-// C:\Users\mds04\OneDrive\Desktop\Invoice Management Application\invoice-management\src\assets\notFound.jpg
 import errorImg from '../assets/notFound.jpg';
 
 const NotFound = () => {

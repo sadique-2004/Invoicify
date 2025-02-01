@@ -2,16 +2,33 @@ import { motion } from "framer-motion";
 
 const SquishyCard = () => {
   return (
-    <section className="bg-white px-4 py-12 flex justify-center">
-      {/* Free Trial Card */}
-      <div className="mx-4 w-fit">
-        <Card type="free" />
+    <>
+      <div className="text-center mb-12 pt-4">
+        <h1 className="text-4xl font-bold text-[#45ccb8] tracking-tight sm:text-5xl md:text-5xl font-montserrat ">
+          Select the Perfect Plan for You
+        </h1>
+        <p className="mt-2 text-lg text-gray-600">
+          Choose the plan that best fits your needs and start simplifying your invoicing today.
+        </p>
       </div>
-      {/* Premium Version Card */}
-      <div className="mx-4 w-fit">
-        <Card type="premium" />
-      </div>
-    </section>
+
+      <section className="bg-white  flex flex-wrap justify-evenly mb-8">
+
+        {/* Free Trial Card */}
+        <div className="mx-4 my-4 w-fit">
+          <Card type="free" />
+        </div>
+        {/* Premium Version Card */}
+        <div className="mx-4 my-4 w-fit">
+          <Card type="premium" />
+        </div>
+        {/* Lifetime Subscription Card */}
+        <div className="mx-4 my-4 w-fit">
+          <Card type="lifetime" />
+        </div>
+
+      </section>
+    </>
   );
 };
 
@@ -28,14 +45,14 @@ const Card = ({ type }) => {
           scale: 1.05,
         },
       }}
-      className="relative h-96 w-80 shrink-0 overflow-hidden rounded-xl bg-[#45ccb8] p-8"
+      className="relative h-96 w-80 shrink-0 overflow-hidden rounded-xl bg-[#44ccb8] text-white p-8"
     >
       <div className="relative z-10 text-white">
         {/* Plan Type Badge */}
         <span className="mb-3 block w-fit rounded-full bg-white/30 px-3 py-0.5 text-sm font-light text-white">
           {type === "free" ? "Free Trial" : "Premium Plan"}
         </span>
-        
+
         {/* Plan Title and Price */}
         <motion.span
           initial={{ scale: 0.85 }}
@@ -50,17 +67,19 @@ const Card = ({ type }) => {
           }}
           className="my-2 block origin-top-left font-mono text-6xl font-black leading-[1.2]"
         >
-          {type === "free" ? "Free" : "₹99/"}
+          {type === "free" ? "FREE" : type === "lifetime" ? "₹499" : "₹99/"}
           <br />
-          
-          {type === "free" ? "90 Days" : "Year"}
+
+          {type === "free" ? "90 Days" : type === "lifetime" ? "Lifetime" : "Year"}
         </motion.span>
 
         {/* Description Text */}
         <p className="text-white text-sm">
-          {type === "free" 
+          {type === "free"
             ? "Experience Invoicify free for 90 days and streamline your invoicing process."
-            : "Get all the premium features of Invoicify for just ₹99 and manage your invoices effortlessly."}
+            : type === "lifetime"
+              ? "Get lifetime access to all premium features of Invoicify for a one-time fee of ₹499."
+              : "Get all the premium features of Invoicify for just ₹99 and manage your invoices effortlessly."}
         </p>
       </div>
 
@@ -109,7 +128,7 @@ const Background = () => {
         cx="160.5"
         cy="114.5"
         r="101.5"
-        fill="#262626"
+        fill="#2d3748"
       />
       <motion.ellipse
         variants={{
@@ -127,7 +146,7 @@ const Background = () => {
         cy="265.5"
         rx="101.5"
         ry="43.5"
-        fill="#262626"
+        fill="#2d3748"
       />
     </motion.svg>
   );

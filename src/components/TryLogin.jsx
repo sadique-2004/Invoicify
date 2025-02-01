@@ -27,8 +27,8 @@ export default function AuthForm() {
     const navigate = useNavigate();
 
     const handleLogin = () => {
-        if (username === 'FREE' && password === '0000') {
-            navigate('/templates');
+        if (username === 'FREE'  && password === '0000') {
+            navigate('/subscription');
         } else {
             alert('Invalid credentials!');
         }
