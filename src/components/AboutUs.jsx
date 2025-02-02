@@ -2,8 +2,6 @@ import React from "react";
 import { Link,useNavigate } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import sadique from "../assets/sadique.jpg";
-// import NewAboutPage from "../components/newAbout.jsx";
-import TextParallaxContentExample from '../components/TextParallaxContentExample'; 
 const AboutUs = () => {
 
   const naviagate = useNavigate();
@@ -25,12 +23,11 @@ const AboutUs = () => {
   return (
     <div className="bg-white text-gray-800 min-h-screen selection:bg-[#45ccb8]">
       {/* <NewAboutPage/> */}
-      <TextParallaxContentExample />
 
       {/* Header with Logo */}
       <div className="flex justify-center mt-12 rounded-full">
         <Link to="/">
-          <img src={logo} alt="Invoice App Logo" className="w-48 h-48 object-contain rounded-full" />
+          <img src={logo} alt="Invoice App Logo" className="w-48 h-48 object-contain rounded-full border-[1rem]  border-[#bcc4c7]" />
         </Link>
       </div>
 

@@ -34,12 +34,12 @@ const testimonials = [
 
 const TestimonialCard = ({ name, role, feedback, rating, image }) => (
   <motion.div
-    className="bg-white text-center p-6 rounded-lg shadow-lg mx-2 my-4 selection:bg-[#45ccb8] selection:text-gray-100"
+    className="bg-white text-center p-6 rounded-lg shadow-lg mx-4 my-4 selection:bg-[#45ccb8] selection:text-gray-100 "
     whileHover={{ scale: 1.05 }}
     transition={{ type: "spring", stiffness: 200, damping: 10 }}
   >
     {/* User Picture */}
-    <div className="mb-4 w-24 h-24 rounded-full overflow-hidden mx-auto">
+    <div className="mb-4 w-24 h-24 rounded-full overflow-hidden mx-auto ">
       <img
         src={image}
         alt={`${name}'s picture`}
