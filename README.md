@@ -54,4 +54,4 @@ Invoicify is currently in development and will officially launch on **Eid**! Sta
 For queries or contributions, feel free to reach out!
 
 📧 Email: mdsadique044234@gmail.com.com    
-💼 LinkedIn: [Your Profile](https://www.linkedin.com/in/mdsadique5/)
+💼 LinkedIn: [mdsadique5](https://www.linkedin.com/in/mdsadique5/)
