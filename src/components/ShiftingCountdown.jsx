@@ -1,5 +1,6 @@
 import { useAnimate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 // NOTE: Change this date to whatever date you want to countdown to :)
 const COUNTDOWN_FROM = "2025-8-01";
@@ -14,7 +15,7 @@ const ShiftingCountdown = () => {
     <div className="p-4 bg-[#e0f7f3] selection:bg-[#45ccb8] selection:text-gray-100">
       {/* Heading for the countdown */}
       <h2 className="text-center text-2xl font-semibold md:text-4xl">
-      🎉 <span className="text-gradient">Enjoy the offer now that the countdown is on!</span> ⏳
+        🎉 <span className="text-gradient">Enjoy the offer now that the countdown is on!</span> ⏳
       </h2>
 
       <div className="mx-auto flex w-full max-w-5xl items-center  mt-6 rounded  ">
@@ -25,14 +26,13 @@ const ShiftingCountdown = () => {
       </div>
 
       {/* Button to redirect to the offer page */}
-      <div className="mt-8 text-center">
-        <a
-          href="/offer-page"  // Replace with the actual URL for the offer page
-          className="inline-block bg-[#45ccb8] text-white px-8 py-3 rounded-full text-lg hover:bg-[#206a60] transition duration-300"
-        >
-         Claim Your Offer Now! 🎁
-        </a>
-      </div>
+      <Link to='/subscription'>
+        <div className="mt-8 text-center">
+          <span className="inline-block bg-[#45ccb8] text-white px-8 py-3 rounded-full text-lg hover:bg-[#206a60] transition duration-300">
+            Claim Your Offer Now! 🎁
+          </span>
+        </div>
+      </Link>
     </div>
   );
 };

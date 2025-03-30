@@ -1,28 +1,44 @@
 import React from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import sadique from "../assets/sadique.jpg";
+import AlertCard from './AlertCard';
+
 const AboutUs = () => {
 
-  const naviagate = useNavigate();
-  const getStarted = () => {
-    naviagate('/login');
-    alert(`
-      Welcome to Invoicify!
-      
-      This is a trial version of our platform. To log in, please use the following credentials:
+  const [showAlert, setShowAlert] = React.useState(false);
+  const navigate = useNavigate();
 
-       Username: FREE 
-       Password: 0000
-      
-      Note: Features are limited in this trial version, and data won't be permanently stored. A full version with backend support is coming soon!
-      
-      Thank you for exploring Invoicify!
-      `);
-  }
+  const handleShowAlert = () => {
+    setShowAlert(true);
+
+    // Redirect to Login Page after 5 seconds
+    setTimeout(()=> {
+      navigate('/login');
+    }, 2000);
+  };
+
   return (
     <div className="bg-white text-gray-800 min-h-screen selection:bg-[#45ccb8]">
-      {/* <NewAboutPage/> */}
+      {/* Show AlertCard */}
+      {showAlert && (
+        <AlertCard
+          onClose={() => setShowAlert(false)}
+        >
+          <h2 className="text-2xl font-bold mb-2 text-[#45ccb8]">Welcome back to Invoicify!</h2>
+          <p className="mb-2">
+            This is a <strong>trial version</strong> of our platform. To log in, use the credentials below:
+          </p>
+          <ul className="list-disc list-inside mb-2">
+            <li><strong>Username:</strong> FREE</li>
+            <li><strong>Password:</strong> 0000</li>
+          </ul>
+          <p className="mb-2 text-sm text-gray-600">
+            ⚠️ Note: Features are limited and data won't be stored permanently. Full version with backend coming soon!
+          </p>
+          <p className="font-semibold">Thank you for exploring Invoicify! 🚀</p>
+        </AlertCard>
+      )}
 
       {/* Header with Logo */}
       <div className="flex justify-center mt-12 rounded-full">
@@ -78,16 +94,14 @@ const AboutUs = () => {
         <div className="py-8 text-center">
           <h2 className="text-2xl font-bold text-[#DD8788] font-montserrat">Try Invoicify Today 🚀!</h2>
           <p className="mt-2 text-gray-600 font-merriweather">Start creating invoices effortlessly.</p>
-          {/* <Link to="/login"> */}
 
           <button
             className="mt-4 px-6 py-3 bg-[#45ccb8] text-white rounded-md border-2 border-transparent hover:bg-white hover:text-[#45ccb8] hover:border-[#45ccb8] transform hover:scale-105 transition-all duration-300 ease-in-out font-oswald"
-            onClick={getStarted}
+            onClick={handleShowAlert}
           >
             Get Started Now
           </button>
 
-          {/* </Link> */}
         </div>
 
         {/* Team Section */}
@@ -108,10 +122,10 @@ const AboutUs = () => {
               <div className="mt-4">
                 <p className="font-semibold">Connect with Me  🤝</p>
                 <div className="flex space-x-4 mt-2 justify-center selection:text-white">
-                  <a href="https://www.linkedin.com/in/mdsadique5" target="_blank" rel="noopener noreferrer" className="text-[#45ccb8] hover:text-blue-500">
+                  <a href="https://www.linkedin.com/in/mdsadique5" target="_blank" rel="noopener noreferrer" className="text-[#45ccb8] hover:text-blue-500 hover:underline">
                     LinkedIn
                   </a>
-                  <a href="https://linktr.ee/Md_Sadique2004" target="_blank" rel="noopener noreferrer" className="text-[#45ccb8] hover:text-blue-500">
+                  <a href="https://linktr.ee/Md_Sadique2004" target="_blank" rel="noopener noreferrer" className="text-[#45ccb8] hover:text-blue-500 hover:underline">
                     Linktree
                   </a>
                 </div>

@@ -4,6 +4,7 @@ import HeroImg from '../assets/invoice.png';
 import { useNavigate } from 'react-router-dom';
 import Confetti from 'react-confetti';
 import Typed from 'typed.js';
+import AlertCardAutoClose from "./AlertCardAutoClose";
 
 
 export default function AuthForm() {
@@ -14,37 +15,48 @@ export default function AuthForm() {
     const [email, setEmail] = useState("");
     const [showConfetti, setShowConfetti] = useState(true);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-          setShowConfetti(false);
-        }, 3000); // Run for 3 seconds
-    
-        return () => clearTimeout(timer); // Clean up the timer
-      }, []);
-    
-
-
+    const [alertMessage, setAlertMessage] = useState("");
+    const [showAlert, setShowAlert] = useState(false);
     const navigate = useNavigate();
 
-    const handleLogin = () => {
-        if (username === 'FREE'  && password === '0000') {
-            navigate('/subscription');
-        } else {
-            alert('Invalid credentials!');
-        }
+    const showAlertWithMessage = (message) => {
+        setAlertMessage(message);
+        setShowAlert(true);
+        setTimeout(() => {
+            setShowAlert(false);
+        }, 3000); // Automatically hide after 3 seconds
     };
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowConfetti(false);
+        }, 3000); // Run for 3 seconds
+
+        return () => clearTimeout(timer); // Clean up the timer
+    }, []);
+
+
     const handleGoogleSignIn = () => {
-        alert("Google Sign-In functionality not implemented yet.");
+        showAlertWithMessage("Google Sign-In functionality not implemented yet.");
     };
 
     const handleGoogleSignUp = () => {
-        alert('Google Sign In functionality coming soon!');
+        showAlertWithMessage("Google Sign-up functionality coming soon!");
     };
 
     const handleSignup = () => {
-        alert("Sign Up functionality not implemented yet.");
+        showAlertWithMessage("Sign Up functionality not implemented yet.");
     };
+
+    const handleLogin = () => {
+        if (username === 'FREE' && password === '0000') {
+            navigate('/subscription');
+        } else {
+            showAlertWithMessage("Invalid credentials!   Use this  Username:FREE & Password: 0000");
+        }
+    };
+
+
 
     // for typed welcome msg
     const typedElement = useRef(null); // Created a ref for the Typed.js target element
@@ -59,11 +71,6 @@ export default function AuthForm() {
             typeSpeed: 90, // Typing speed
             backSpeed: 50, // Backspacing speed
             loop: true, // Loop the typing animation
-            // cursorChar: '/>', // Custom cursor character
-            // showCursor: true, 
-            // fadeOut: true, // Enable fade out effect
-            // fadeOutClass: "typed-fade-out", // Custom class for fade out
-
         };
 
         const typed = new Typed(typedElement.current, options); // Initialize Typed.js with the ref
@@ -80,6 +87,9 @@ export default function AuthForm() {
             {/* <Confetti /> */}
             {showConfetti && <Confetti />}
             {/* #E13A90 text-[#3B81B8]*/}
+
+            {showAlert && <AlertCardAutoClose message={alertMessage} />}
+
             <h1 className="sm:text-2xl text-xl px-4 font-bold text-[#45ccb8] font-montserrat  text-center mt-4">
                 <span ref={typedElement} className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-[#44ccb8] "></span>
             </h1>
@@ -192,7 +202,7 @@ export default function AuthForm() {
 
                             {/* Google Sign In Button */}
                             <button
-                                onClick={handleGoogleSignIn}
+                                onClick={ handleGoogleSignUp}
                                 className="w-full flex items-center justify-center border border-gray-300 py-2 rounded hover:bg-gray-100 mb-4"
                             >
                                 <img

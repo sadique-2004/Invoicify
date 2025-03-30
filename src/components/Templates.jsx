@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import template1 from "../assets/invoice1.jpg";
 import template2 from "../assets/invoice2.jpg";
 import template3 from "../assets/invoice3.jpg";
-import InvoicePage from "./InvoicePage";
 
 const TemplateCard = ({ templateImage, templateTitle, onChoose }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -11,6 +11,11 @@ const TemplateCard = ({ templateImage, templateTitle, onChoose }) => {
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
+
+  const Navigate = useNavigate();
+  const template1 = ()=>{
+    Navigate('/invoice1')
+  }
 
   return (
     <motion.div
@@ -31,7 +36,6 @@ const TemplateCard = ({ templateImage, templateTitle, onChoose }) => {
         margin: "1rem",
         boxShadow: "0px 3px 10px rgba(0, 0, 0, 0.2)",
       }}
-    //   <InvoicePage/>
     >
       {/* Template Preview */}
       <motion.img
@@ -61,10 +65,11 @@ const TemplateCard = ({ templateImage, templateTitle, onChoose }) => {
           {/* Choose Template Button */}
           
           <motion.button
-            onClick={(e) => {
-              e.stopPropagation(); // Prevent the card collapse
-              onChoose(templateTitle);
-            }}
+            // onClick={(e) => {
+            //   e.stopPropagation(); // Prevent the card collapse
+            //   onChoose(templateTitle);
+            // }}
+            onClick={template1}
             style={{
               marginTop: "1rem",
               padding: "0.5rem 1rem",

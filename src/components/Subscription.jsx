@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
+import { useNavigate, Link } from "react-router-dom";
 
 const SquishyCard = () => {
+
+
   return (
     <>
-      <div className="text-center mb-12 pt-4">
-        <h1 className="text-4xl font-bold text-[#45ccb8] tracking-tight sm:text-5xl md:text-5xl font-montserrat ">
+      <div className="text-center mb-12 pt-4 my-4">
+        <h1 className="text-4xl font-bold text-[#45ccb8] tracking-tight sm:text-5xl md:text-5xl font-montserrat " >
           Select the Perfect Plan for You
         </h1>
         <p className="mt-2 text-lg text-gray-600">
@@ -33,6 +36,11 @@ const SquishyCard = () => {
 };
 
 const Card = ({ type }) => {
+
+  // const Navigate = useNavigate();
+  // const templates = () => {
+  //   Navigate('/templates')
+  // }
   return (
     <motion.div
       whileHover="hover"
@@ -67,26 +75,34 @@ const Card = ({ type }) => {
           }}
           className="my-2 block origin-top-left font-mono text-6xl font-black leading-[1.2]"
         >
-          {type === "free" ? "FREE" : type === "lifetime" ? "₹499" : "₹99/"}
+          {type === "free" ? "Free " : type === "lifetime" ? "₹499" : "₹99/"}
           <br />
 
-          {type === "free" ? "90 Days" : type === "lifetime" ? "Lifetime" : "Year"}
+          {type === "free" ? "TrialNow!" : type === "lifetime" ? "Lifetime" : "Year"}
         </motion.span>
 
         {/* Description Text */}
         <p className="text-white text-sm">
           {type === "free"
-            ? "Experience Invoicify free for 90 days and streamline your invoicing process."
+            ? "Unlock all premium features of Invoicify absolutely FREE till countdown. manage invoices like a pro. No payment required!"
             : type === "lifetime"
               ? "Get lifetime access to all premium features of Invoicify for a one-time fee of ₹499."
-              : "Get all the premium features of Invoicify for just ₹99 and manage your invoices effortlessly."}
+              : "Get 1 year access of all the premium features of Invoicify for just ₹99 and manage your invoices effortlessly."}
         </p>
+
+
       </div>
 
       {/* CTA Button */}
-      <button className="absolute bottom-4 left-4 right-4 z-20 rounded border-2 border-white bg-white py-2 text-center font-mono font-black uppercase text-neutral-800 backdrop-blur transition-colors hover:bg-white/30 hover:text-white">
-        {type === "free" ? "Start Free Trial" : "Get Premium Plan"}
-      </button>
+      <Link
+        to={`/templates/${type}`}>
+        <button className="absolute bottom-4 left-4 right-4 z-20 rounded border-2 border-white bg-white py-2 text-center font-mono font-black uppercase text-neutral-800 backdrop-blur transition-colors hover:bg-white/30 hover:text-white"
+         
+        >
+          {type === "free" ? "Start Free Trial" : "Get Premium Plan"}
+
+        </button>
+      </Link>
 
       {/* Background Shapes */}
       <Background />
@@ -113,6 +129,7 @@ const Background = () => {
         ease: "backInOut",
       }}
     >
+
       <motion.circle
         variants={{
           hover: {
@@ -130,6 +147,7 @@ const Background = () => {
         r="101.5"
         fill="#2d3748"
       />
+
       <motion.ellipse
         variants={{
           hover: {

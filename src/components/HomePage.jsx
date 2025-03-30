@@ -9,37 +9,52 @@ import FAQ from './Faq';
 import chatboat from '../assets/ai.jpg'
 import heroSvg from '../assets/hero.svg';
 import ScrollLogoText from './ScrollLogoText';
-// import Card from '../components/card';
 import './Global.css';
 import ShiftingCountdown from './ShiftingCountdown';
-
-
+import AlertCard from './AlertCard';
 
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const [showAlert, setShowAlert] = React.useState(false);
+
+  const handleShowAlert = () => {
+    setShowAlert(true);
+
+    // Redirect to Login Page after 5 seconds
+    setTimeout(()=> {
+      navigate('/login');
+    }, 2000);
+  };
+
   const aboutUs = () => {
     navigate('/aboutus')
   }
 
-  const Indevelopment = () => {
-    confirm(`
-      Welcome to Invoicify!
-      
-      This is a trial version of our platform. To log in, please use the following credentials:
 
-       Username: FREE 
-       Password: 0000
-      
-      Note: Features are limited in this trial version, and data won't be permanently stored. A full version with backend support is coming soon!
-      
-      Thank you for exploring Invoicify!
-      `);
-
-  }
 
   return (
     <div>
+
+      {/* Show AlertCard */}
+      {showAlert && (
+        <AlertCard
+          onClose={() => setShowAlert(false)}
+        >
+          <h2 className="text-2xl font-bold mb-2 text-[#45ccb8]">Welcome back to Invoicify!</h2>
+          <p className="mb-2">
+            This is a <strong>trial version</strong> of our platform. To log in, use the credentials below:
+          </p>
+          <ul className="list-disc list-inside mb-2">
+            <li><strong>Username:</strong> FREE</li>
+            <li><strong>Password:</strong> 0000</li>
+          </ul>
+          <p className="mb-2 text-sm text-gray-600">
+            ⚠️ Note: Features are limited and data won't be stored permanently. Full version with backend coming soon!
+          </p>
+          <p className="font-semibold">Thank you for exploring Invoicify! 🚀</p>
+        </AlertCard>
+      )}
 
       {/* Hero Section */}
       <div className="sm:bg-gradient-to-l bg-gradient-to-t from-gray-200 to-[#44ccb8] text-white py-16 px-4 selection:text-[#45ccb8] selection:bg-gray-100">
@@ -65,15 +80,14 @@ const HomePage = () => {
             {/* Updated Buttons */}
             <div className="flex justify-center md:justify-start gap-4">
               {/* Get Started Button */}
-              <Link to="/login">
+  
                 <button
                   className="flex items-center gap-2 px-6 py-3 bg-white text-[#45ccb8] font-semibold rounded-lg shadow-md hover:bg-green-100 transition duration-200"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
-                  onClick={Indevelopment}
+                  onClick={handleShowAlert}
                 >
                   Get Started
                 </button>
-              </Link>
 
               {/* About Us Button */}
               <button
@@ -95,10 +109,10 @@ const HomePage = () => {
             />
           </div>
         </div>
-       
+
       </div>
 
-      
+
 
 
       <ScrollLogoText />
@@ -168,11 +182,11 @@ const HomePage = () => {
         </div>
       </div>
 
-      <ShiftingCountdown/>
+      <ShiftingCountdown />
 
-      
+
       <Testimonials />
-      
+
 
       {/* <Card /> */}
 
