@@ -94,8 +94,8 @@ const TemplateCard = ({ templateImage, templateTitle, onChoose }) => {
 const TemplateSelection = () => {
   const templates = [
     { id: 1, image: template1 , title: "Professional" },
-    { id: 2, image: template2 , title: "Minimalist" },
-    { id: 3, image: template3 , title: "Creative" },
+    // { id: 2, image: template2 , title: "Minimalist" },
+    // { id: 3, image: template3 , title: "Creative" },
   ];
 
   const handleTemplateSelect = (template) => {
