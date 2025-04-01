@@ -1,27 +1,16 @@
-.dotted-background{
-    background-color: red !important;
-    background-image: radial-gradient(black 1px, transparent 1px,);
-    background-size: 30px 30px;
-}
-
-/* .dotted-background {
-    background: 
-        radial-gradient(circle, black 1px, transparent 1px), /* Dots */
-        /* linear-gradient(to right, #45ccb8, white); /* Gradient */
-    /* background-size: 10px 10px, auto; Define size for dots and gradient */
-    /* background-position: 0 0, 0 0; Align both layers */ 
-/* } */ 
-
-  /* button:hover .absolute.inset-0 {
-    transform: scaleX(1);
-  } */
-
-
-  /* Add this to your Global or Custom CSS file */
-.text-gradient {
-  background-image: linear-gradient(to right, #3B81B8, #E13A90, #DFB554); /* Gradient colors */
-  -webkit-background-clip: text; /* Clip the background to text */
-  color: transparent; /* Make the text color transparent to show the gradient */
+@media print {
+  body * {
+    visibility: hidden; /* Hide everything */
+  }
+  #invoice-preview, #invoice-preview * {
+    visibility: visible; /* Show only the invoice */
+  }
+  #invoice-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 }
 
   
