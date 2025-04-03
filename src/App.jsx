@@ -6,7 +6,6 @@ import Navbar from './components/Navbar';
 import AboutUs from './components/AboutUs';
 import TryLogin from './components/TryLogin';
 import Templates from './components/Templates';
-import InvoiceForm from './components/InvoiceForm';
 import NotFound from './components/NotFound';
 import SquishyCard from './components/Subscription';
 
@@ -25,7 +24,6 @@ function App() {
         <Route path="/subscription" element={<SquishyCard />} />
         <Route path="/templates/free" element={<Templates />} />
         <Route path="/invoice1" element={<InvoicePage />} />
-        <Route path="/invoice2" element={<InvoiceForm />} />
         {/* Default route for non-existing paths */}
         <Route path="*" element={<NotFound />} />
       </Routes>

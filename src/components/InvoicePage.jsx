@@ -2,6 +2,12 @@
 
 import React, { useState } from 'react';
 import { SiLinkedin } from "react-icons/si";
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+
+
+
+
 
 function InvoicePage() {
   const [shopName, setShopName] = useState('');
@@ -16,6 +22,10 @@ function InvoicePage() {
     `INV-${Math.floor(Math.random() * 1000000)}`
   );
   const [showPreview, setShowPreview] = useState(false);
+
+  const options = ['KG (Kilogram)', 'G (Gram)', 'PS (Pieces)', 'L (Liter)', 'ML (Milliliter)', 'Dozen', 'Box', 'Pack', 'M (Meter)'];
+  const [unitOfMeasure, setUnitOfMeasure] = useState(options[0]);
+  const [uomInputValue, setUomInputValue] = useState('');
 
   const addItem = () => setItems([...items, { name: '', quantity: '', price: '' }]);
   const removeItem = (index) => setItems(items.filter((_, i) => i !== index));
@@ -33,129 +43,333 @@ function InvoicePage() {
           <h1 className="text-2xl font-bold mb-6">Invoice Form</h1>
           <div className="mb-4"><strong>Invoice Number:</strong> {invoiceNumber}</div>
 
-          <div className='flex flex-col sm:flex-row sm:w-full justify-between mb-4 gap-4'>
+          <div className='flex flex-col sm:flex-row sm:w-full justify-between mb- gap-4'>
 
+            {/* store info */}
             <div className='mb-4 border p-4 rounded-lg sm:w-1/2'>
               <h1 className="text-xl font-bold mb-2 text-center underline underline-offset-4 text-gray-600">Store Information</h1>
               <div className="mb-4">
-                <label className="block font-medium">Name :</label>
-                <input
-                  type="text"
+
+                <TextField id="outlined-basic" label="Name" variant="outlined" size="small"
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      '& fieldset': {
+                        borderColor: '#45ccb8', // Border color
+                      },
+                      '&:hover fieldset': {
+                        borderColor: '#45ccb8', // Border color on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#45ccb8', // Border color when focused
+                      },
+                    },
+                    // Label color customization
+                    '& .MuiInputLabel-root': {
+                      color: '#45ccb8', // Default label color
+                      '&.Mui-focused': {
+                        color: '#45ccb8', // Label color when focused
+                      },
+                    },
+                  }}
+                  className="w-full"
+
                   value={shopName}
                   onChange={(e) => setShopName(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg ring-1 ring-[#45ccb8] focus:ring-[#45ccb8] focus:outline-none focus:bg-gray-100"
                   placeholder="The Lazy Panda Mart"
                 />
               </div>
+
               <div className="mb-4">
-                <label className="block font-medium">Address :</label>
-                <input
-                  type="text"
+                <TextField id="outlined-basic" label="Address" variant="outlined" size="small"
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      '& fieldset': {
+                        borderColor: '#45ccb8', // Border color
+                      },
+                      '&:hover fieldset': {
+                        borderColor: '#45ccb8', // Border color on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#45ccb8', // Border color when focused
+                      },
+                    },
+                    // Label color customization
+                    '& .MuiInputLabel-root': {
+                      color: '#45ccb8', // Default label color
+                      '&.Mui-focused': {
+                        color: '#45ccb8', // Label color when focused
+                      },
+                    },
+                  }}
+                  className="w-full"
                   value={shopAddress}
                   onChange={(e) => setShopAddress(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg ring-1 ring-[#45ccb8] focus:ring-[#45ccb8] focus:outline-none focus:bg-gray-100"
                   placeholder=" 404 Nowhere Street, Dreamland"
                 />
               </div>
+
+
               <div className="mb-4">
-                <label className="block font-medium">Contact_no :</label>
-                <input
-                  type="text"
+                <TextField id="outlined-basic" label="Contact_no" variant="outlined" size="small"
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      '& fieldset': {
+                        borderColor: '#45ccb8', // Border color
+                      },
+                      '&:hover fieldset': {
+                        borderColor: '#45ccb8', // Border color on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#45ccb8', // Border color when focused
+                      },
+                    },
+                    // Label color customization
+                    '& .MuiInputLabel-root': {
+                      color: '#45ccb8', // Default label color
+                      '&.Mui-focused': {
+                        color: '#45ccb8', // Label color when focused
+                      },
+                    },
+                  }}
+                  className="w-full"
                   value={shopContactNumber}
                   onChange={(e) => setShopContactNumber(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg ring-1 ring-[#45ccb8] focus:ring-[#45ccb8] focus:outline-none focus:bg-gray-100"
                   placeholder="+91-1234567890"
                 />
               </div>
             </div>
 
-
+            {/* customer info */}
             <div className='mb-4 border p-4 rounded-lg sm:w-1/2'>
               <h1 className="text-xl font-bold mb-2 text-center underline underline-offset-4 text-gray-600">Customer Information</h1>
               <div className="mb-4">
-                <label className="block font-medium">Name :</label>
-                <input
-                  type="text"
+                <TextField id="outlined-basic" label="Name" variant="outlined" size="small"
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      '& fieldset': {
+                        borderColor: '#45ccb8', // Border color
+                      },
+                      '&:hover fieldset': {
+                        borderColor: '#45ccb8', // Border color on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#45ccb8', // Border color when focused
+                      },
+                    },
+                    // Label color customization
+                    '& .MuiInputLabel-root': {
+                      color: '#45ccb8', // Default label color
+                      '&.Mui-focused': {
+                        color: '#45ccb8', // Label color when focused
+                      },
+                    },
+                  }}
+                  className="w-full"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg ring-1 ring-[#45ccb8] focus:ring-[#45ccb8] focus:outline-none focus:bg-gray-100"
                   placeholder='Sadique'
                 />
               </div>
 
               <div className="mb-4">
-                <label className="block font-medium">Address :</label>
-                <input
-                  type="text"
+                <TextField id="outlined-basic" label="Address" variant="outlined" size="small"
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      '& fieldset': {
+                        borderColor: '#45ccb8', // Border color
+                      },
+                      '&:hover fieldset': {
+                        borderColor: '#45ccb8', // Border color on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#45ccb8', // Border color when focused
+                      },
+                    },
+                    // Label color customization
+                    '& .MuiInputLabel-root': {
+                      color: '#45ccb8', // Default label color
+                      '&.Mui-focused': {
+                        color: '#45ccb8', // Label color when focused
+                      },
+                    },
+                  }}
+                  className="w-full"
                   value={customerAddress}
                   onChange={(e) => setCustomerAddress(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg ring-1 ring-[#45ccb8] focus:ring-[#45ccb8] focus:outline-none focus:bg-gray-100"
                   placeholder='221B Baker Street, Bhopal'
                 />
               </div>
+
               <div className="mb-4">
-                <label className="block font-medium">Contact_no :</label>
-                <input
-                  type="text"
+                <TextField id="outlined-basic" label="Contact_no" variant="outlined" size="small"
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      '& fieldset': {
+                        borderColor: '#45ccb8', // Border color
+                      },
+                      '&:hover fieldset': {
+                        borderColor: '#45ccb8', // Border color on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#45ccb8', // Border color when focused
+                      },
+                    },
+                    // Label color customization
+                    '& .MuiInputLabel-root': {
+                      color: '#45ccb8', // Default label color
+                      '&.Mui-focused': {
+                        color: '#45ccb8', // Label color when focused
+                      },
+                    },
+                  }}
+                  className="w-full"
                   value={customerNumber}
                   onChange={(e) => setCustomerNumber(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg ring-1 ring-[#45ccb8] focus:ring-[#45ccb8] focus:outline-none focus:bg-gray-100"
                   placeholder='+91-9876543210'
                 />
               </div>
             </div>
-
           </div>
 
-          <div className="mb-4">
-            <label className="block font-medium">Date</label>
+          <div className="mb-4 border p-4 rounded-lg ">
+            <label className="block font-medium text-[#45ccb8]">Date</label>
             <input
               type="date"
               value={invoiceDate}
               onChange={(e) => setInvoiceDate(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg ring-1 ring-[#45ccb8] focus:ring-[#45ccb8] focus:outline-none focus:bg-gray-100"
+              className="w-full px-4 py-2 rounded ring-1 ring-[#45ccb8] focus:ring-[#45ccb8] focus:outline-none text-[#45ccb8]"
             />
           </div>
 
+          {/* Purchased Items */}
           <div className='mb-4 border p-4 rounded-lg '>
             <div className="mb-6">
               <h3 className="text-lg text-center font-bold mb-4 underline underline-offset-4 text-gray-600">Purchased Items</h3>
               {items.map((item, index) => (
 
-                <div key={index} className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-4">
-                  <input
-                    type="text"
-                    placeholder="Item Name"
-                    value={item.name}
-                    onChange={(e) => {
-                      const updatedItems = [...items];
-                      updatedItems[index].name = e.target.value;
-                      setItems(updatedItems);
+                <div key={index} className="grid grid-cols-1 sm:grid-cols-5 gap-4 mb-4">
+                  <TextField id="outlined-basic" label="Item Name" variant="outlined" size="small" value={item.name} onChange={(e) => {
+                    const updatedItems = [...items];
+                    updatedItems[index].name = e.target.value;
+                    setItems(updatedItems);
+                  }}
+                    sx={{
+                      '& .MuiOutlinedInput-root': {
+                        '& fieldset': {
+                          borderColor: '#45ccb8', // Border color
+                        },
+                        '&:hover fieldset': {
+                          borderColor: '#45ccb8', // Border color on hover
+                        },
+                        '&.Mui-focused fieldset': {
+                          borderColor: '#45ccb8', // Border color when focused
+                        },
+                      },
+                      // Label color customization
+                      '& .MuiInputLabel-root': {
+                        color: '#45ccb8', // Default label color
+                        '&.Mui-focused': {
+                          color: '#45ccb8', // Label color when focused
+                        },
+                      },
                     }}
-                    className="w-full px-4 py-2 border rounded-lg ring-1 ring-[#45ccb8] focus:ring-[#45ccb8] focus:outline-none focus:bg-gray-100"
                   />
-                  <input
-                    type="number"
-                    placeholder="Quantity"
-                    value={item.quantity}
+
+                  <TextField id="outlined-basic" label="Quantity" variant="outlined" size="small" value={item.quantity}
                     onChange={(e) => {
                       const updatedItems = [...items];
                       updatedItems[index].quantity = +e.target.value;
                       setItems(updatedItems);
                     }}
-                    className="w-full sm:w-full px-4 py-2 border rounded-lg ring-1 ring-[#45ccb8] focus:ring-[#45ccb8] focus:outline-none focus:bg-gray-100"
+                    sx={{
+                      '& .MuiOutlinedInput-root': {
+                        '& fieldset': {
+                          borderColor: '#45ccb8', // Border color
+                        },
+                        '&:hover fieldset': {
+                          borderColor: '#45ccb8', // Border color on hover
+                        },
+                        '&.Mui-focused fieldset': {
+                          borderColor: '#45ccb8', // Border color when focused
+                        },
+                      },
+                      // Label color customization
+                      '& .MuiInputLabel-root': {
+                        color: '#45ccb8', // Default label color
+                        '&.Mui-focused': {
+                          color: '#45ccb8', // Label color when focused
+                        },
+                      },
+                    }}
                   />
-                  <input
-                    type="number"
-                    placeholder="Price"
-                    value={item.price}
+
+                  <Autocomplete
+                    value={item.unitOfMeasure}  // Set the unit of measure for this specific item
+                    onChange={(event, newValue) => {
+                      const updatedItems = [...items];
+                      updatedItems[index].unitOfMeasure = newValue; // Update only the selected item's unitOfMeasure
+                      setItems(updatedItems);  // Set the updated list of items
+                    }}
+                    options={options}  // The list of units of measure
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label="Unit of Measure"
+                        size="small"
+                        sx={{
+                          '& .MuiOutlinedInput-root': {
+                            '& fieldset': {
+                              borderColor: '#45ccb8', // Border color
+                            },
+                            '&:hover fieldset': {
+                              borderColor: '#45ccb8', // Border color on hover
+                            },
+                            '&.Mui-focused fieldset': {
+                              borderColor: '#45ccb8', // Border color when focused
+                            },
+                          },
+                          // Label color customization
+                          '& .MuiInputLabel-root': {
+                            color: '#45ccb8', // Default label color
+                            '&.Mui-focused': {
+                              color: '#45ccb8', // Label color when focused
+                            },
+                          },
+                        }}
+                      />
+                    )}
+                  />
+
+
+                  <TextField id="outlined-basic" label="Price" variant="outlined" size="small" value={item.price}
                     onChange={(e) => {
                       const updatedItems = [...items];
                       updatedItems[index].price = +e.target.value;
                       setItems(updatedItems);
                     }}
-                    className="w-full sm:w-full px-4 py-2 border rounded-lg ring-1 ring-[#45ccb8] focus:ring-[#45ccb8] focus:outline-none focus:bg-gray-100"
+                    sx={{
+                      '& .MuiOutlinedInput-root': {
+                        '& fieldset': {
+                          borderColor: '#45ccb8', // Border color
+                        },
+                        '&:hover fieldset': {
+                          borderColor: '#45ccb8', // Border color on hover
+                        },
+                        '&.Mui-focused fieldset': {
+                          borderColor: '#45ccb8', // Border color when focused
+                        },
+                      },
+                      // Label color customization
+                      '& .MuiInputLabel-root': {
+                        color: '#45ccb8', // Default label color
+                        '&.Mui-focused': {
+                          color: '#45ccb8', // Label color when focused
+                        },
+                      },
+                    }}
                   />
+
+
                   <button
                     onClick={() => removeItem(index)}
                     className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full sm:w-auto"
@@ -214,6 +428,7 @@ function InvoicePage() {
               <tr className="bg-[#45ccb8] text-white">
                 <th className="border p-2">Item</th>
                 <th className="border p-2">Quantity</th>
+                <th className='border p-2'>UOM</th>
                 <th className="border p-2">Price</th>
                 <th className="border p-2">Total</th>
               </tr>
@@ -223,6 +438,7 @@ function InvoicePage() {
                 <tr key={index} className={index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}>
                   <td className="border p-2">{item.name}</td>
                   <td className="border p-2">{item.quantity}</td>
+                  <td className="border p-2">{item.unitOfMeasure}</td>
                   <td className="border p-2">{item.price}</td>
                   <td className="border p-2">{item.quantity * item.price}</td>
                 </tr>
