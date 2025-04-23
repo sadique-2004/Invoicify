@@ -1,6 +1,9 @@
 import { useAnimate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { useUser } from "@clerk/clerk-react";
+
 
 // NOTE: Change this date to whatever date you want to countdown to :)
 const COUNTDOWN_FROM = "2025-8-01";
@@ -11,6 +14,18 @@ const HOUR = MINUTE * 60;
 const DAY = HOUR * 24;
 
 const ShiftingCountdown = () => {
+  const navigate = useNavigate();
+  const { isSignedIn } = useUser(); // ✅ Correct usage inside component
+
+  const handleClick = () => {
+    if (isSignedIn)
+      navigate('/subscription');
+    else {
+      navigate('/sign-in');
+
+    }
+  };
+
   return (
     <div className="p-4 bg-[#e0f7f3] selection:bg-[#45ccb8] selection:text-gray-100">
       {/* Heading for the countdown */}
@@ -26,13 +41,13 @@ const ShiftingCountdown = () => {
       </div>
 
       {/* Button to redirect to the offer page */}
-      <Link to='/subscription'>
-        <div className="mt-8 text-center">
+        <div className="mt-8 text-center" typeof="button" onClick={handleClick}>
           <span className="inline-block bg-[#45ccb8] text-white px-8 py-3 rounded-full text-lg hover:bg-[#206a60] transition duration-300">
             Claim Your Offer Now! 🎁
           </span>
         </div>
-      </Link>
+
+     
     </div>
   );
 };

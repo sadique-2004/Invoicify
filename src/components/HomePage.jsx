@@ -1,29 +1,39 @@
-
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import createInvoice from '../assets/createInvoice.jpg';
-import printDownload from '../assets/printDownload.jpg'
-// import invoiceImage from '../assets/logo.png';
+import printDownload from '../assets/printDownload.jpg';
 import Testimonials from './Testimonials';
 import FAQ from './Faq';
-import chatboat from '../assets/ai.jpg'
+import chatboat from '../assets/ai.jpg';
 import heroSvg from '../assets/hero.svg';
 import ScrollLogoText from './ScrollLogoText';
 import './Global.css';
 import ShiftingCountdown from './ShiftingCountdown';
 import AlertCard from './AlertCard';
+import { useUser } from "@clerk/clerk-react";
 
 
 const HomePage = () => {
+
   const navigate = useNavigate();
+  const { isSignedIn } = useUser(); // ✅ Correct usage inside component
   const [showAlert, setShowAlert] = React.useState(false);
+
+  const handleClick = () => {
+    if (isSignedIn)
+      navigate('/subscription');
+    else {
+      navigate('/sign-in');
+
+    }
+  };
 
   const handleShowAlert = () => {
     setShowAlert(true);
 
     // Redirect to Login Page after 5 seconds
-    setTimeout(()=> {
-      navigate('/login');
+    setTimeout(() => {
+      navigate('/');
     }, 2000);
   };
 
@@ -45,10 +55,7 @@ const HomePage = () => {
           <p className="mb-2">
             This is a <strong>trial version</strong> of our platform. To log in, use the credentials below:
           </p>
-          <ul className="list-disc list-inside mb-2">
-            <li><strong>Username:</strong> FREE</li>
-            <li><strong>Password:</strong> 0000</li>
-          </ul>
+
           <p className="mb-2 text-sm text-gray-600">
             ⚠️ Note: Features are limited and data won't be stored permanently. Full version with backend coming soon!
           </p>
@@ -80,14 +87,14 @@ const HomePage = () => {
             {/* Updated Buttons */}
             <div className="flex justify-center md:justify-start gap-4">
               {/* Get Started Button */}
-  
-                <button
-                  className="flex items-center gap-2 px-6 py-3 bg-white text-[#45ccb8] font-semibold rounded-lg shadow-md hover:bg-green-100 transition duration-200"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
-                  onClick={handleShowAlert}
-                >
-                  Get Started
-                </button>
+
+              <button
+                className="flex items-center gap-2 px-6 py-3 bg-white text-[#45ccb8] font-semibold rounded-lg shadow-md hover:bg-green-100 transition duration-200"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                onClick={handleClick}
+              >
+                Get Started
+              </button>
 
               {/* About Us Button */}
               <button

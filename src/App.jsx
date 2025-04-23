@@ -8,8 +8,7 @@ import TryLogin from './components/TryLogin';
 import Templates from './components/Templates';
 import NotFound from './components/NotFound';
 import SquishyCard from './components/Subscription';
-
-// LOGIN/Sign Up - /subscription   - /templates/INVOICE1 OR /templates/INVOICE2
+import { SignIn, SignUp } from '@clerk/clerk-react';
 
 
 function App() {
@@ -20,7 +19,11 @@ function App() {
         {/* <Card/> */}
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/login" element={<TryLogin />} />
+
+        {/* Clerk Auth Pages */}
+        <Route path="/sign-in" element={<TryLogin mode="sign-in" />} />
+        <Route path="/sign-up" element={<TryLogin mode="sign-up" />} />
+
         <Route path="/subscription" element={<SquishyCard />} />
         <Route path="/templates/free" element={<Templates />} />
         <Route path="/invoice1" element={<InvoicePage />} />

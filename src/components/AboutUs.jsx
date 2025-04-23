@@ -3,19 +3,21 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import sadique from "../assets/sadique.jpg";
 import AlertCard from './AlertCard';
+import { useUser } from "@clerk/clerk-react";
 
 const AboutUs = () => {
 
+const navigate = useNavigate();
+  const { isSignedIn } = useUser(); // ✅ Correct usage inside component
   const [showAlert, setShowAlert] = React.useState(false);
-  const navigate = useNavigate();
 
-  const handleShowAlert = () => {
-    setShowAlert(true);
+  const handleClick = () => {
+    if (isSignedIn)
+      navigate('/subscription');
+    else {
+      navigate('/sign-in');
 
-    // Redirect to Login Page after 5 seconds
-    setTimeout(()=> {
-      navigate('/login');
-    }, 2000);
+    }
   };
 
   return (
@@ -97,7 +99,7 @@ const AboutUs = () => {
 
           <button
             className="mt-4 px-6 py-3 bg-[#45ccb8] text-white rounded-md border-2 border-transparent hover:bg-white hover:text-[#45ccb8] hover:border-[#45ccb8] transform hover:scale-105 transition-all duration-300 ease-in-out font-oswald"
-            onClick={handleShowAlert}
+            onClick={handleClick}
           >
             Get Started Now
           </button>
