@@ -13,7 +13,7 @@ const FAQ = () => {
     {
       question: "Do I need to create an account?",
       answer:
-        "For now, you can log in with provided credentials. A sign-up feature will arrive soon for personalized accounts.",
+        "Yes, it's mandatory if you want to create invoices. You can sign in or sign up using your Google account, or manually enter your details to create an account.",
     },
     {
       question: "How do I create a new invoice?",

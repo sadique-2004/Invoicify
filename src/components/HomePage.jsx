@@ -14,10 +14,11 @@ import { useUser } from "@clerk/clerk-react";
 
 
 const HomePage = () => {
-
-  const navigate = useNavigate();
-  const { isSignedIn } = useUser(); // ✅ Correct usage inside component
   const [showAlert, setShowAlert] = React.useState(false);
+  const navigate = useNavigate();
+  const { isSignedIn, user, isLoaded } = useUser(); // ✅ Correct usage inside component
+  if (!isLoaded) return <div>Loading...</div>;
+
 
   const handleClick = () => {
     if (isSignedIn)
@@ -26,15 +27,6 @@ const HomePage = () => {
       navigate('/sign-in');
 
     }
-  };
-
-  const handleShowAlert = () => {
-    setShowAlert(true);
-
-    // Redirect to Login Page after 5 seconds
-    setTimeout(() => {
-      navigate('/');
-    }, 2000);
   };
 
   const aboutUs = () => {
@@ -68,7 +60,12 @@ const HomePage = () => {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
           {/* Text Content */}
           <div className="text-center md:text-left md:w-1/2">
-            {/* Updated Heading */}
+           
+            {/* Personalized Greeting */}
+            {isSignedIn && <p className='text-xl mb-2 font-semibold text-white drop-shadow-sm'>
+              Welcome back, {user?.username}! 👋</p>}
+
+            {/* Heading */}
             <h1
               className="text-4xl md:text-5xl font-bold mb-4"
               style={{ fontFamily: "'Montserrat', serif" }}
@@ -98,7 +95,7 @@ const HomePage = () => {
 
               {/* About Us Button */}
               <button
-                className="flex items-center gap-2 px-6 py-3 border border-white hover:border-[#] text-white font-semibold rounded-lg hover:bg-green-100 hover:text-[#45ccb8] transition duration-200"
+                className="flex items-center gap-2 px-6 py-3 border border-white hover:border-[#45ccb8] text-white font-semibold rounded-lg hover:bg-green-100 hover:text-[#45ccb8] transition duration-200"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
                 onClick={aboutUs}
               >
